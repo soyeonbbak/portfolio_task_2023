@@ -2,7 +2,55 @@
     width: 100vw; height: 100vh;
     background: url(/images/7598163.jpg) no-repeat fixed;
     background-size: cover;
+    text-align: center; margin: 0 auto;
 }
-.bg .icon img{
+.bg ul {
+    
+    display: flex; flex-flow: column nowrap;
+}
+.bg ul li {}
+.bg ul li img {
+    animation: profile 3s alternate linear infinite;
+    width: 200px; height: 200px; border-radius: 50%;
+    border: 5px solid white;
+}
+.bg ul li h1 {}
+.bg ul li .bar {
+    width: 300px; height: 15px;
+    background: white;
+}
+.bg ul li  {
+    font-weight: 500;
+}
+/* 아이콘 */
+.bg .icon {
+    
+    display: flex; flex-flow: row nowrap;
+}
+.bg .icon p {
+    display: flex; flex-flow: column;
+}
+.bg .icon p img{
     width: 50px; height: 50px;
+    /* display: flex; flex-flow: row nowrap; */
 }
+.bg .icon p span {}
+
+
+@keyframes profile {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-50px);}
+}
+
+/* header nav .m_nav {
+    display: flex;
+    width: 40px; height: 40px;
+    background: lime;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+}
+********* = > x 로 효과주기전 =로 만들기 ********
+header nav .m_nav span {
+    width: 100%; height: 8px;
+    border-radius: 5px;
+    background: #222; */
