@@ -1,42 +1,66 @@
-.bg {
+body {
     width: 100vw; height: 100vh;
     background: url(/images/7598163.jpg) no-repeat fixed;
     background-size: cover;
     text-align: center; margin: 0 auto;
 }
+.bg {
+    margin: 100px 0;
+}
 .bg ul {
-    
     display: flex; flex-flow: column nowrap;
 }
-.bg ul li {}
+.bg ul li {
+    margin: 10px 0;
+}
+.bg ul li:nth-child(1) {
+    position: relative;
+}
 .bg ul li img {
     animation: profile 3s alternate linear infinite;
     width: 200px; height: 200px; border-radius: 50%;
     border: 5px solid white;
 }
 .bg ul li h1 {}
-.bg ul li .bar {
+.bg ul .bar {
+    align-self: center;
     width: 300px; height: 15px;
     background: white;
+}
+.bg ul .bar span {
+    width: 100%; 
 }
 .bg ul li  {
     font-weight: 500;
 }
 /* 아이콘 */
 .bg .icon {
-    
+    position: absolute; right: 45%;
     display: flex; flex-flow: row nowrap;
 }
-.bg .icon p {
+.bg .icon a {
     display: flex; flex-flow: column;
 }
-.bg .icon p img{
-    width: 50px; height: 50px;
+.bg .icon a img{
+    width: 25px; height: 25px;
     /* display: flex; flex-flow: row nowrap; */
 }
-.bg .icon p span {}
-
-
+.bg .icon a span {
+    opacity: 0;
+    font-family: '';
+}
+.bg .icon a img:hover~span {
+    opacity: 1;
+}
+.manu_bar {}
+.manu_bar span{}
+.bg_line1 {
+    background: url(/images/bg2.png);
+    width: 1440px;
+}
+.bg_line2 {
+    background: url(/images/bg3.png);
+}
 @keyframes profile {
     0% {transform: translateY(0);}
     100% {transform: translateY(-50px);}
