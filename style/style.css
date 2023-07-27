@@ -21,7 +21,16 @@ body {
     width: 200px; height: 200px; border-radius: 50%;
     border: 5px solid white;
 }
-.top ul li h1 {}
+.top ul li h1 {
+    font-family: ;
+    font-weight: 800; font-size:2rem;
+    text-transform: uppercase; /* 글자를 대문자로 만드는 속성 */
+    background: linear-gradient(90deg,purple, blue, darkgreen, orangered);
+    -webkit-background-clip: text/* text안에서만 보이게 하는 것, 글자 색깔 변경 */;
+    -webkit-text-fill-color: transparent ;
+    background-size: 400%;
+    animation: text 10s linear infinite;
+}
 .top .bar {
     margin: 0 auto;
     width: 300px; height: 15px;
@@ -73,17 +82,19 @@ body {
     background: black;
 }
 .box {
-    width: 1440px;
+    padding: 100px 0;
 }
 .box .bg_line1 {
     background: url(/images/bg2.png);
-    width: 1440px;
-    position:relative; z-index: 100;
+    width: 100%; height: 200px;
+    transform: rotate(-15deg);
+    animation: bgtext 10s linear infinite;
 }
-.boc .bg_line2 {
-    background: url(/images/bg3.png);
-    position:relative; z-index: 200;
-    width: 100%;
+.box .bg_line2 {
+    background:url(/images/bg3.png);
+    width: 100%; height: 200px;
+    transform: rotate(15deg);
+    animation: bgtext 10s linear infinite;
 }
 .btm {
     display: flex; flex-flow: row nowrap;
@@ -97,6 +108,7 @@ body {
     filter: drop-shadow(0 0 10px black);
     background: white;
     line-height: 10px; margin-right: 15px;
+    text-align: center;
 }
 .btm .item:last-child {
     margin-right: 0;
@@ -112,6 +124,10 @@ body {
     color: white;
     filter: drop-shadow(0 0 2px #666);
 }
+@keyframes bgtext {
+    0% {background-position-x: 0;}
+    100% {background-position-x: -1000px;}
+}
 
 @keyframes profile {
     0% {transform: translateY(0);}
@@ -121,7 +137,10 @@ body {
     0% {background: 0;}
     100% {background: 0;}
 }
-
+@keyframes text {
+    0% { background-position-x: 0;}
+    100% { background-position-x: 400%;}
+}
 /* header nav .m_nav {
     display: flex;
     width: 40px; height: 40px;
