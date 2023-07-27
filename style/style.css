@@ -61,6 +61,18 @@ body {
 .bg_line2 {
     background: url(/images/bg3.png);
 }
+.btm {
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 1160px ; margin: 0 auto;
+}
+.btm .item {
+    display: flex; flex-flow: column nowrap;
+}
+.btm .item img {}
+.btm .item em {}
+.btm .item span {}
+.number {}
 @keyframes profile {
     0% {transform: translateY(0);}
     100% {transform: translateY(-50px);}
