@@ -22,9 +22,7 @@ body {
     border: 5px solid white;
 }
 .top ul li h1 {
-    font-family: ;
     font-weight: 800; font-size:2rem;
-    text-transform: uppercase; /* 글자를 대문자로 만드는 속성 */
     background: linear-gradient(90deg,purple, blue, darkgreen, orangered);
     -webkit-background-clip: text/* text안에서만 보이게 하는 것, 글자 색깔 변경 */;
     -webkit-text-fill-color: transparent ;
@@ -37,7 +35,11 @@ body {
     background: white;
 }
 .top .bar span {
-    width: 100%; 
+    width: 100%;
+    transition: all 5s;
+}
+.top ul li img:hover~.bar{
+    background: pink;
 }
 .top p {
     font-weight: 500;
@@ -85,16 +87,16 @@ body {
     padding: 100px 0;
 }
 .box .bg_line1 {
-    background: url(/images/bg2.png);
-    width: 100%; height: 200px;
+    background: url(/images/bg2.png) repeat-x;
+    width: 120%; height: 200px;
     transform: rotate(-15deg);
     animation: bgtext 10s linear infinite;
 }
 .box .bg_line2 {
-    background:url(/images/bg3.png);
-    width: 100%; height: 200px;
+    background:url(/images/bg3.png) repeat-x;
+    width: 120%; height: 200px;
     transform: rotate(15deg);
-    animation: bgtext 10s linear infinite;
+    animation: bgtext 10s linear reverse infinite;
 }
 .btm {
     display: flex; flex-flow: row nowrap;
@@ -104,11 +106,18 @@ body {
 }
 .btm .item {
     display: flex; flex-flow: column nowrap;
-    border-radius: 30px 30px 0 0;
-    filter: drop-shadow(0 0 10px black);
+    border-radius: 30% 30% 0 0;
     background: white;
-    line-height: 10px; margin-right: 15px;
+    margin-right: 15px;
     text-align: center;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+.btm .item:hover~img {
+    background-size: 150%;
+}
+.btm .item:hover {
+    filter: drop-shadow(5px 0 10px black);
 }
 .btm .item:last-child {
     margin-right: 0;
@@ -118,10 +127,13 @@ body {
 }
 .btm .item em {}
 .btm .item span {}
-#number, #text {
+.end {
+    padding: 100px 0;
+}
+#number,#text{
     text-align: center;
     font-size: 2rem;
-    color: white;
+    color: white; line-height: 1.5;
     filter: drop-shadow(0 0 2px #666);
 }
 @keyframes bgtext {
@@ -140,6 +152,10 @@ body {
 @keyframes text {
     0% { background-position-x: 0;}
     100% { background-position-x: 400%;}
+}
+@keyframes shadow {
+    0% {filter: drop-shadow(0);}
+    100% {filter: drop-shadow(0 0 5px);}
 }
 /* header nav .m_nav {
     display: flex;
